@@ -49,7 +49,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
     if (input.file) {
       formData.append("file", input.file);
     }
-    // console.log("Cookies before request:", document.cookie);
+
     try {
       dispatch(setLoading(true));
       const res = await axios.post(
@@ -62,12 +62,10 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
           withCredentials: true,
         }
       );
-      //   console.log("Response from server:", res);
 
       if (res.data.success) {
-        console.log("User data to be dispatched:", res.data.user);
         dispatch(setUser(res.data.user));
-        console.log("Message from server:", res.data.message);
+
         toast.success(res.data.message);
       }
     } catch (error) {
@@ -76,7 +74,6 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
     } finally {
       setOpen(false);
       dispatch(setLoading(false));
-      console.log(input);
     }
   };
 

@@ -31,14 +31,6 @@ function Signup() {
     const selectedRole =
       (studentElement.current.checked && studentElement.current.value) ||
       (recruiterElement.current.checked && recruiterElement.current.value);
-    // console.log({
-    //   fullname: fullnameElement.current.value,
-    //   email: emailElement.current.value,
-    //   phoneNumber: phoneNumberElement.current.value,
-    //   password: passwordElement.current.value,
-    //   profile: profileElement.current.files[0],
-    //   role: selectedRole,
-    // });
 
     const formData = new FormData();
     formData.append("fullName", fullNameElement.current.value);

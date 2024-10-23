@@ -31,7 +31,7 @@ function Navbar() {
       toast.error(error.response.data.message);
     }
   };
-  // console.log("User:", user);
+
   return (
     <div className="flex items-center justify-between m-auto max-w-7xl h-16 ">
       <div>

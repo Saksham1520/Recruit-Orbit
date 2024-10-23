@@ -14,7 +14,6 @@ function useGetAllCompanies() {
         });
 
         if (res.data.success) {
-          console.log("Companies fetched:", res.data.companies);
           dispatch(setCompanies(res.data.companies));
         }
       } catch (error) {

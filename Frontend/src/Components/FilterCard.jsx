@@ -33,7 +33,6 @@ const FilterCard = () => {
 
   useEffect(() => {
     dispatch(setRadioFilter(selectedValue));
-    console.log(selectedValue);
   }, [selectedValue]);
 
   const onClickHandler = () => {

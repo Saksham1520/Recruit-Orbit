@@ -93,12 +93,15 @@ export const getApplicant = async (req, res) => {
             }
         });
 
+
         if (!job) {
+            console.log("Job not found for ID:", jobId);
             return res.status(404).json({
                 message: "Job not found.",
                 success: false
             })
         }
+
         return res.status(200).json({
             job,
             success: true

@@ -19,7 +19,7 @@ const Browse = () => {
     setFilterBrowseJob(filteredBrowseJob || []);
     // dispatch(setSearchedQuery(""));
   }, [allJobs, searchedQuery]);
-  // console.log(filterBrowseJob);
+
   return (
     <div>
       <div className="max-w-7xl mx-auto my-10">

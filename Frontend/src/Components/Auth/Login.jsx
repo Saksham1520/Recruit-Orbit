@@ -34,8 +34,6 @@ function Login() {
       password: passwordElement.current.value,
       role: selectedRole,
     };
-    // console.log(loginInput);
-    // console.log("Cookies before request:", document.cookie);
 
     try {
       dispatch(setLoading(true));
@@ -50,13 +48,11 @@ function Login() {
         navigate("/");
         toast.success(res.data.message);
       }
-      // console.log("Cookies after login:", document.cookie);
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
     } finally {
       dispatch(setLoading(false));
-      console.log("Loading state set to false");
     }
 
     emailElement.current.value = "";

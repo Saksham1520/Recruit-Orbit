@@ -27,6 +27,7 @@ function ApplicantsTable() {
           withCredentials: true,
         }
       );
+
       if (res.data.success) {
         toast.success(res.data.message);
       }

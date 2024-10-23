@@ -50,7 +50,7 @@ function CompanySetups() {
     }
     try {
       dispatch(setLoading(true));
-      //   console.log("Loading state set to true  for set up");
+
       const res = await axios.put(
         `http://localhost:8080/api/v1/company/update/${companyId}`,
         formData,
@@ -61,7 +61,7 @@ function CompanySetups() {
           withCredentials: true,
         }
       );
-      //   console.log("Response from server:", res);
+
       if (res.data.success) {
         toast.success(res.data.message);
         navigate("/admin/companies");
@@ -70,7 +70,6 @@ function CompanySetups() {
       console.log(error);
     } finally {
       dispatch(setLoading(false));
-      console.log("Loading state set to false for setup");
     }
   };
 

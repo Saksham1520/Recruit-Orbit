@@ -4,9 +4,11 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllApplicants } from "@/redux/applicationSlice";
+import { APPLICATION_API_END_POINT } from "@/utils/constants";
 
 function Applicants() {
   const params = useParams();
+
   const dispatch = useDispatch();
   const { applicants } = useSelector((store) => store.application);
   useEffect(() => {
@@ -16,6 +18,7 @@ function Applicants() {
           `http://localhost:8080/api/v1/application/${params.id}/applicants`,
           { withCredentials: true }
         );
+
         if (res.data.success) {
           dispatch(setAllApplicants(res.data.job));
         }
@@ -28,7 +31,7 @@ function Applicants() {
   return (
     <div className="max-w-7xl mx-auto">
       <h1 className="font-bold text-xl my-5">
-        Applicants({applicants.applications.length})
+        Applicants({applicants?.applications?.length})
       </h1>
       <ApplicantsTable />
     </div>
