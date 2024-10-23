@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "../ui/button";
+
 import { ArrowLeft, Loader2 } from "lucide-react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "@/redux/authSlice";
 import useGetCompanyById from "@/hooks/useGetCompanyById";
+import { Button } from "../ui/button";
 
 function CompanySetups() {
   const [input, setInput] = useState({
