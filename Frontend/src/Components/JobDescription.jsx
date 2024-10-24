@@ -22,7 +22,7 @@ const JobDescription = () => {
   const appliedHandler = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8080/api/v1/application/apply/${jobId}`,
+        `https://recruit-orbit.onrender.com/api/v1/application/apply/${jobId}`,
         { withCredentials: true }
       );
 

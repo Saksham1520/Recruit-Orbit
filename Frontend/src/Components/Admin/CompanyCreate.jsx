@@ -16,7 +16,7 @@ function CompanyCreate() {
   const registerNewCompany = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:8080/api/v1/company/register`,
+        `https://recruit-orbit.onrender.com/api/v1/company/register`,
         { companyName },
         {
           headers: {

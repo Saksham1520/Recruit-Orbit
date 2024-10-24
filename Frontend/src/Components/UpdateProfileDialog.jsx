@@ -53,7 +53,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
     try {
       dispatch(setLoading(true));
       const res = await axios.post(
-        `http://localhost:8080/api/v1/user/profile/update`,
+        `https://recruit-orbit.onrender.com/api/v1/user/profile/update`,
         formData,
         {
           headers: {

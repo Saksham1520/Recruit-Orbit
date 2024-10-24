@@ -15,7 +15,7 @@ function Applicants() {
     const fetchAllApplicants = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/api/v1/application/${params.id}/applicants`,
+          `https://recruit-orbit.onrender.com/api/v1/application/${params.id}/applicants`,
           { withCredentials: true }
         );
 

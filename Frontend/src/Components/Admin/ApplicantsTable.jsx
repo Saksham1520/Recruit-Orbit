@@ -21,7 +21,7 @@ function ApplicantsTable() {
   const statusHandler = async (status, id) => {
     try {
       const res = await axios.post(
-        `http://localhost:8080/api/v1/application/status/${id}/update`,
+        `https://recruit-orbit.onrender.com/api/v1/application/status/${id}/update`,
         { status },
         {
           withCredentials: true,

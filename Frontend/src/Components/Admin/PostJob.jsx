@@ -50,7 +50,7 @@ const PostJob = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        `http://localhost:8080/api/v1/job/post`,
+        `https://recruit-orbit.onrender.com/api/v1/job/post`,
         input,
         {
           headers: {

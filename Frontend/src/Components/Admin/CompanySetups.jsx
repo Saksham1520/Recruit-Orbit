@@ -53,7 +53,7 @@ function CompanySetups() {
       dispatch(setLoading(true));
 
       const res = await axios.put(
-        `http://localhost:8080/api/v1/company/update/${companyId}`,
+        `https://recruit-orbit.onrender.com/api/v1/company/update/${companyId}`,
         formData,
         {
           headers: {
