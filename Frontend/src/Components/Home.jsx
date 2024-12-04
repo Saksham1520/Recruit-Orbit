@@ -12,7 +12,7 @@ function Home() {
     <>
       <HeroSection />
       {user?.role === "student" && <CategoryCarousel />}
-      <CategoryCarousel />
+      {/* <CategoryCarousel /> */}
       <LatestJobs />
     </>
   );
