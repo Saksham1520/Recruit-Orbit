@@ -11,7 +11,7 @@ function Home() {
   return (
     <>
       <HeroSection />
-      {user.role === "student" && <CategoryCarousel />}
+      {user?.role === "student" && <CategoryCarousel />}
       <CategoryCarousel />
       <LatestJobs />
     </>
