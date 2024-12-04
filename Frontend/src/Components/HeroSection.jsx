@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { Search } from "lucide-react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setSearchedQuery } from "@/redux/jobSlice";
 
@@ -9,6 +9,7 @@ function HeroSection() {
   const [query, setQuery] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { user } = useSelector((store) => store.auth);
 
   const onChangeHandler = () => {
     dispatch(setSearchedQuery(query));
@@ -34,17 +35,19 @@ function HeroSection() {
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
           aliquam quae sapiente repudiandae aspernatur.
         </p>
-        <div className="w-[40%] flex items-center  border rounded-full shadow-lg border-gray-200 pl-3 mx-auto">
-          <input
-            type="text"
-            placeholder="Find your dream job"
-            className="outline-none border-none w-full rounded-full"
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <Button onClick={onChangeHandler} className="rounded-r-full ">
-            <Search />
-          </Button>
-        </div>
+        {user?.role === "student" && (
+          <div className="w-[40%] flex items-center  border rounded-full shadow-lg border-gray-200 pl-3 mx-auto">
+            <input
+              type="text"
+              placeholder="Find your dream job"
+              className="outline-none border-none w-full rounded-full"
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            <Button onClick={onChangeHandler} className="rounded-r-full ">
+              <Search />
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
