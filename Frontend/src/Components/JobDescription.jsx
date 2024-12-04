@@ -47,9 +47,10 @@ const JobDescription = () => {
     const fetchSingleJob = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/api/v1/job/get/${jobId}`,
+          `https://recruit-orbit.onrender.com/api/v1/job/get/${jobId}`,
           { withCredentials: true }
         );
+        console.log("API Response:", res.data);
 
         if (res.data.success) {
           dispatch(setSingleJob(res.data.job));
