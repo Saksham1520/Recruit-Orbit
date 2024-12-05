@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 function Home() {
   useGetAllJobs();
   const { user } = useSelector((store) => store.auth);
-  console.log(user);
 
   return (
     <>
